@@ -44,6 +44,19 @@ signature = rsa.sign(message, privkey, 'SHA-256')
 rsa.verify(message, signature, pubkey)
 ```
 
+- **If you only need SHA hashing**
+
+```
+
+import hashlib
+import hmac
+
+message='somesecretmessage'
+secret = 'somesecretThatIsToo$ecret'
+sign = hmac.new(secret, message, hashlib.sha512).hexdigest()
+
+```
+
 ## References
 
 - [rsa 4.6](https://stuvel.eu/python-rsa-doc/usage.html)
